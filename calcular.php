@@ -32,6 +32,14 @@ $respiracoes = $minutosvividos * 17;
     <h1>Tempo de Vida</h1>
     <hr>
     <h2><?php echo $nome; ?>, você tem <?php echo number_format($idade, 0, ',', '.'); ?> anos.</h2>
+    <h2><?php if ($idade < 18): ?>
+        Você ainda é menor de idade.
+        <?php elseif ($idade >= 18 && $idade < 60): ?>
+        Você é adulto.
+        <?php else: ?>
+        Você é idoso.
+        <?php endif; ?>
+    </h2>
     <h2>Você já viveu aproximadamente <?php echo number_format($diasvivivos, 0, ',', '.'); ?> dias.</h2>
     <h2>Você já viveu aproximadamente <?php echo number_format($horasvividas, 0, ',', '.'); ?> horas.</h2>
     <h2>Você já viveu aproximadamente <?php echo number_format($minutosvividos, 0, ',', '.'); ?> minutos.</h2>
